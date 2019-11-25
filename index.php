@@ -17,7 +17,7 @@
                 </h1>
                 <h2>WIS DOUM</h2>
                 <p class= "lead text-muted ">
-                    Description : Netflix n'a qu'a bien se tenir
+                    Description : Wisflix n'a qu'a bien se tenir
                 </p>
             </div>
     
