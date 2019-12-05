@@ -90,11 +90,22 @@
 
                     $films=$req;}
 
-                    foreach ($films as $film) {
-                      card($film["titre"],$film["image"],$film["description"]);
-                    }
                     
-                    $_GET
+                    
+                      if (array_key_exists ("genre",$_GET)){
+                      $genre_id=$_GET ["genre"];
+                      $req=$dbh-> prepare ("SELECT * FROM film INNER JOIN genre ON film.genre_id =genre.id WHERE genre.libelle= $genre");
+                      $req-> bindParam ":genre",$genre);
+					  $require-> execute();
+					  $films=$req;
+                    }
+                    else {
+                    $req=$dbh-> query("SELECT * FROM film WHERE 1");
+                    $films=$req;}
+
+					foreach ($films as $film) {
+                      card($film["titre"],$film["image"],$film["description"]);
+                  	}
                     ?>
                         
 
